@@ -179,6 +179,28 @@ button:disabled {
     font-weight: 500;
 }
 
+.suggestion-quote {
+    background-color: #fefce8;
+    border-left: 4px solid var(--suggestion-color);
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 0 4px 4px 0;
+    color: #4b5563;
+}
+
+.placement-reason {
+    font-size: 0.9em;
+    color: #64748b;
+    margin-top: 0.35rem;
+    padding-left: 0.5rem;
+    font-style: italic;
+}
+
+.suggestion-list li.suggestion-complex {
+    margin-bottom: 1.25rem;
+}
+
+
 .hidden {
     display: none;
 }
