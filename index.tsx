@@ -60,6 +60,16 @@ function createSuggestionCard(title: string, items: { text: string; isSuggestion
 function displayResults(result: any, content: string) {
     resultsContainer.innerHTML = '<h2>Rekomendasi Optimasi</h2>'; // Clear previous results
 
+    // Topic Strength
+    const topicCard = document.createElement('div');
+    topicCard.className = 'result-card';
+    topicCard.innerHTML = `
+        <h3>🧠 Kekuatan Topik</h3>
+        <div class="score-display">Skor: <strong>${result.topic_strength_score} / 100</strong></div>
+        <p>${result.topic_strength_recommendation}</p>
+    `;
+    resultsContainer.appendChild(topicCard);
+
     // Keywords Card
     const allKeywords = [result.focus_keyword, ...result.related_keywords];
     const keywordsString = allKeywords.join(', ');
@@ -117,16 +127,6 @@ function displayResults(result: any, content: string) {
         basicSeoItems.push({ text: `Panjang konten Anda ${wordCount} kata. Sudah bagus!`, isSuggestion: false });
     }
     resultsContainer.appendChild(createSuggestionCard('✅ Basic SEO', basicSeoItems));
-
-    // Topic Strength
-    const topicCard = document.createElement('div');
-    topicCard.className = 'result-card';
-    topicCard.innerHTML = `
-        <h3>🧠 Kekuatan Topik</h3>
-        <div class="score-display">Skor: <strong>${result.topic_strength_score} / 100</strong></div>
-        <p>${result.topic_strength_recommendation}</p>
-    `;
-    resultsContainer.appendChild(topicCard);
 
     // Additional SEO
     const additionalSeoItems = [
