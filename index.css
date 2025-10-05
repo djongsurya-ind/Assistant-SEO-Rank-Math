@@ -192,3 +192,56 @@ button:disabled {
     border-radius: 8px;
     text-align: center;
 }
+
+.keyword-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    background-color: #f8fafc;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+}
+
+.keyword-text {
+    flex-grow: 1;
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--text-color);
+    word-break: break-word;
+}
+
+.copy-btn {
+    width: auto;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    background-color: var(--secondary-color);
+    flex-shrink: 0;
+}
+
+.copy-btn:hover, .copy-btn:focus {
+    background-color: var(--primary-color);
+}
+
+.copy-btn.copied {
+    background-color: var(--success-color);
+    cursor: default;
+}
+
+.copy-btn.copied:hover {
+    background-color: var(--success-color);
+}
+
+.score-display {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+    color: #475569;
+}
+
+.score-display strong {
+    font-size: 1.25rem;
+    color: var(--primary-color);
+    font-weight: 700;
+}
